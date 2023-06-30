@@ -1,0 +1,134 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 574.26584234930453,
+            "y": 17.156105100463677
+          },
+          "nodeIndex": "dCities",
+          "nodeLineageTag": "ccb7bde8-a249-4d43-a02b-2c1cdba50e95",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 296
+        },
+        {
+          "location": {
+            "x": 567.70927357032474,
+            "y": 245.33230293663058
+          },
+          "nodeIndex": "factForecast",
+          "nodeLineageTag": "912d1b37-c7b5-4a9a-a3d9-ac691a5c0bed",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 892.2,
+            "y": 4
+          },
+          "nodeIndex": "dCountries",
+          "nodeLineageTag": "79a7641b-6474-4e48-831c-d7d94faf95e9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 821.7,
+            "y": 244
+          },
+          "nodeIndex": "factData",
+          "nodeLineageTag": "4d5f63d6-1249-4e3e-bf00-329693145aeb",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 293.70000000000005,
+            "y": 888
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "094665df-3b7b-40b1-8e37-58373a21a77c",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 4,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 40.700000000000045,
+            "y": 888
+          },
+          "nodeIndex": "dMetricSystem",
+          "nodeLineageTag": "8bd251fb-eb01-4896-86e7-8540caece494",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 1188.3219474497682,
+            "y": 271.58732612055644
+          },
+          "nodeIndex": "dMetrics",
+          "nodeLineageTag": "92283c49-0c4d-4746-854f-9b05a6273ecf",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 6,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 811.5,
+            "y": 568
+          },
+          "nodeIndex": "dYear",
+          "nodeLineageTag": "f6e40dbb-8985-4414-826c-a724dfe70ad2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 200
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 58.288288288288292,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
