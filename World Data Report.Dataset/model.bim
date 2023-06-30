@@ -245,7 +245,11 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Text"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": "\"http://download.geonames.org/export/dump/\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
@@ -282,7 +286,11 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Text"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": "\"03717c3603924a39ad4122604222405\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
@@ -349,7 +357,7 @@
             "value": "Text"
           }
         ],
-        "expression": "\"C:\\Users\\nini_\\OneDrive\\Área de Trabalho\\Drive\\Repositories\\Geography_Report\\Data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "expression": "\"C:\\Users\\nini_\\OneDrive\\Área de Trabalho\\Drive\\Repositories\\WorldDataReport\\Data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
         "kind": "m",
         "lineageTag": "798e7337-1f42-4a2f-85de-2529127ca517",
         "queryGroup": "Parameters"
@@ -1302,6 +1310,7 @@
           },
           {
             "name": "Population Sources",
+            "displayFolder": "Weather",
             "expression": [
               "\"Source: \"&",
               "    CALCULATE(",
@@ -1318,6 +1327,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "displayFolder": "Weather",
             "expression": [
               "",
               "//Selected metric system",
@@ -1343,6 +1353,7 @@
                 "value": "{\"isGeneralNumber\":true}"
               }
             ],
+            "displayFolder": "Weather",
             "expression": [
               "",
               "//Selected metric system",
@@ -1362,12 +1373,14 @@
           },
           {
             "name": "Rain (%)",
+            "displayFolder": "Weather",
             "expression": "DIVIDE(AVERAGE(factForecast[chance_of_rain]),100)",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "dc517bd6-2a54-49ec-a8be-84ef866c8216"
           },
           {
             "name": "TemperatureTitle",
+            "displayFolder": "Weather",
             "expression": [
               "",
               "VAR system = SELECTEDVALUE(dMetricSystem[Metric System],\"International system\")",
@@ -1378,6 +1391,7 @@
           },
           {
             "name": "Humidity",
+            "displayFolder": "Weather",
             "expression": "DIVIDE(AVERAGE(factForecast[humidity]),100)",
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "84a591a3-32e1-4b02-a940-fef0e59559fe"
@@ -1404,10 +1418,6 @@
       {
         "name": "dCities",
         "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
@@ -1585,10 +1595,6 @@
       {
         "name": "dCountries",
         "annotations": [
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
           {
             "name": "PBI_ResultType",
             "value": "Table"
@@ -1894,10 +1900,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
           }
         ],
         "columns": [
@@ -1939,10 +1941,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
           }
         ],
         "columns": [
@@ -2090,7 +2088,7 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Table"
+            "value": "Exception"
           },
           {
             "name": "PBI_NavigationStepName",
