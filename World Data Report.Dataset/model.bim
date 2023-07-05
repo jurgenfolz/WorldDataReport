@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.118.828.0 (23.06)"
+        "value": "2.118.621.0 (23.06)"
       },
       {
         "name": "PBI_ProTooling",
@@ -357,7 +357,7 @@
             "value": "Text"
           }
         ],
-        "expression": "\"C:\\Users\\nini_\\OneDrive\\Área de Trabalho\\Drive\\Repositories\\WorldDataReport\\Data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "expression": "\"C:\\Users\\KlausFolz\\Desktop\\GD\\Repositories\\WorldDataReport\\Data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
         "kind": "m",
         "lineageTag": "798e7337-1f42-4a2f-85de-2529127ca517",
         "queryGroup": "Parameters"
@@ -933,7 +933,7 @@
               "    dMetrics[Alias]=\"GDP\"",
               ")"
             ],
-            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
             "lineageTag": "3163cbd4-7b9a-4534-a9da-6b97e8744068"
           },
           {
@@ -1303,7 +1303,7 @@
             "lineageTag": "d7a385b7-d083-4629-8660-02f180562d60"
           },
           {
-            "name": "Map Title",
+            "name": "HDI Map Title",
             "displayFolder": "Others",
             "expression": "SELECTEDVALUE(dMetrics[Attribute])&\" (Year \"&SELECTEDVALUE(dYear[Year])&\")\"",
             "lineageTag": "36bab4bf-4feb-427f-a5c4-2f04b22cbd4d"
@@ -1375,7 +1375,7 @@
             "name": "Rain (%)",
             "displayFolder": "Weather",
             "expression": "DIVIDE(AVERAGE(factForecast[chance_of_rain]),100)",
-            "formatString": "0.00%;-0.00%;0.00%",
+            "formatString": "0\\ %;-0\\ %;0\\ %",
             "lineageTag": "dc517bd6-2a54-49ec-a8be-84ef866c8216"
           },
           {
@@ -1395,6 +1395,75 @@
             "expression": "DIVIDE(AVERAGE(factForecast[humidity]),100)",
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "84a591a3-32e1-4b02-a940-fef0e59559fe"
+          },
+          {
+            "name": "HDI Title",
+            "displayFolder": "Others",
+            "expression": "\"Human Development - Year \"&SELECTEDVALUE(dYear[Year])",
+            "lineageTag": "671151c4-61fa-4784-9da2-1bbd20e3ff9f"
+          },
+          {
+            "name": "GDP Title",
+            "displayFolder": "Others",
+            "expression": "\"Gross Domestic Product - Year \"&SELECTEDVALUE(dYear[Year])",
+            "lineageTag": "dacda30e-7e2a-4b4b-949a-1595ecba28ce"
+          },
+          {
+            "name": "GDP Description",
+            "displayFolder": "Others",
+            "expression": "CALCULATE(MAX(dMetrics[Description]),dMetrics[Alias]=\"GDP\")",
+            "lineageTag": "ddbb21ab-9a01-4ce0-b78c-a36eefe8e9ad"
+          },
+          {
+            "name": "GDP Sources",
+            "displayFolder": "Others",
+            "expression": [
+              "\"Source: \"&",
+              "    CALCULATE(",
+              "        MAX(dMetrics[Source]),",
+              "        dMetrics[Alias]=\"GDP\")"
+            ],
+            "lineageTag": "8f00de55-ecac-4009-9ea8-d830c5c26eee"
+          },
+          {
+            "name": "GDP per capita classification",
+            "displayFolder": "Classification and Conditionals",
+            "expression": [
+              "",
+              "SWITCH(TRUE(),",
+              "    [Gross domestic product per capita (GDP per capita)] <= 1035, \"Low\",",
+              "    [Gross domestic product per capita (GDP per capita)] <= 4045, \"Lower-middle\",",
+              "    [Gross domestic product per capita (GDP per capita)] <= 12535, \"Upper-middle\",",
+              "    [Gross domestic product per capita (GDP per capita)] > 12535, \"High\"",
+              ")"
+            ],
+            "lineageTag": "fcc6eae4-bd84-4554-b941-869026d2b653"
+          },
+          {
+            "name": "GDP per capita color",
+            "displayFolder": "Colors",
+            "expression": [
+              "",
+              "SWITCH(TRUE(),",
+              "    [Gross domestic product per capita (GDP per capita)] = BLANK(), [No Data],",
+              "    [Gross domestic product per capita (GDP per capita)] <= 1035, [Red],",
+              "    [Gross domestic product per capita (GDP per capita)] <= 4045, [Orange],",
+              "    [Gross domestic product per capita (GDP per capita)] <= 12535, [Light Green],",
+              "    [Gross domestic product per capita (GDP per capita)] > 12535, [Dark Green]",
+              ")"
+            ],
+            "lineageTag": "e971a4db-fad7-4960-b0ee-97b91728a10c"
+          },
+          {
+            "name": "GDP Map Title",
+            "displayFolder": "Others",
+            "expression": "\"GDP per Capita\"&\" (Year \"&SELECTEDVALUE(dYear[Year])&\")\"",
+            "lineageTag": "b37393f8-7472-4c69-af29-6817dfd1f517"
+          },
+          {
+            "name": "City name",
+            "expression": "SELECTEDVALUE(dCities[name])",
+            "lineageTag": "2c913444-1a15-407c-8ebe-68b7a9e3f79a"
           }
         ],
         "partitions": [
@@ -1421,6 +1490,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -1564,6 +1637,7 @@
             "summarizeBy": "none"
           }
         ],
+        "excludeFromModelRefresh": true,
         "lineageTag": "ccb7bde8-a249-4d43-a02b-2c1cdba50e95",
         "partitions": [
           {
@@ -1598,6 +1672,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -1871,6 +1949,7 @@
             "summarizeBy": "none"
           }
         ],
+        "excludeFromModelRefresh": true,
         "lineageTag": "79a7641b-6474-4e48-831c-d7d94faf95e9",
         "partitions": [
           {
@@ -2088,7 +2167,7 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           },
           {
             "name": "PBI_NavigationStepName",
@@ -2180,6 +2259,7 @@
             "summarizeBy": "none"
           }
         ],
+        "excludeFromModelRefresh": true,
         "lineageTag": "4d5f63d6-1249-4e3e-bf00-329693145aeb",
         "partitions": [
           {
